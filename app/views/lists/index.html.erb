@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://reaganray.com/img/blog/vhs-books/vhs-books.jpg);">
+  <div class="container">
+    <h1>Save any kind of movies</h1>
+    <a class="btn btn-flat" href="/lists/new">Create a movie list</a>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h4>My lists</h1>
+
+<div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-12 col-sm-6 mb-3">
+        <%= link_to list_path(list), class:"text-decoration-none" do %>
+          <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('vhs-cassette-with-white-cover-front-side_621211-89.jpg') %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>
