@@ -1,19 +1,39 @@
 .banner {
   background-size: cover;
-  background-position: center;
   padding: 150px 0;
   height: 50vh;
   background-position: center top;
   color: $white;
+  position: relative;
 }
 
 .banner h1 {
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 90px;
 }
 
 .banner p {
   font-size: 20px;
   opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner h1,
+.banner p {
+  text-shadow: 5px 5px 10px  $black;
+}
+
+@media only screen and (max-width: 768px) {
+  .banner{
+    padding: 110px 10px;
+    height: 30vh;
+  }
+
+  .banner h1{
+    font-size: 40px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .banner{
+    height: 40vh;
+  }
 }

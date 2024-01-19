@@ -1,17 +1,25 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3 class="text-black">Add a movie to your <%= @list.name %> list</h3>
-        <%= simple_form_for [@list, @bookmark] do |f| %>
-          <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
-          <%# <%= f.input :movie_id, as: :select, collection: Movie.all, label: "Select a movie" %>
-          <%# <%= f.association :list, label: "Select a list" %>
-          <%= f.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
-          <%= f.submit class: "btn btn-flat" %>
-        <% end %>
+<div class="card-category"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path('vhs-cassette-horizontal.jpg') %>')">
+  <h1><%= @list.name %></h1>
+</div>
+
+<div class="grid-bg">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-lg-3">
+        <div class="bg-white rounded p-3 shadow">
+          <h3 class="text-black">Add a movie to your <%= @list.name %> movies list</h3>
+            <%= simple_form_for [@list, @bookmark] do |f| %>
+              <%= f.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
+              <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+              <div class="d-flex justify-content-between">
+                <%= f.submit "Add movie", class: "btn btn-flat" %>
+                <%= link_to "Cancel", list_path(@list) %>
+                <%= link_to "Back to all lists", lists_path %>
+              </div>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>
-  <%= link_to "Back to all lists", lists_path %>
 </div>
