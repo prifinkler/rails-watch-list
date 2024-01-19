@@ -14,6 +14,10 @@
 require 'uri'
 require 'net/http'
 require 'json'
+require 'dotenv'
+
+Dotenv.load
+
 
 puts "Cleaning up database..."
 Bookmark.destroy_all
@@ -34,7 +38,7 @@ movies_to_create = []
 
   request = Net::HTTP::Get.new(url)
   request["accept"] = 'application/json'
-  request["Authorization"] = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOTA4NmVkYmI0ZTg1NzlkNzFkMTg5ZWI2YzlmOGUyMiIsInN1YiI6IjY1YTdkZTExOGNmY2M3MDEyMzE2ZGRiYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KQuPk0wz2BIoHOW_SxCowtiMRQx2cNvegXpv32e2U5I'
+  request["Authorization"] = "Bearer #{ENV['TMDB_KEY']}"
 
   response = http.request(request)
   movies_data = JSON.parse(response.body)['results']
