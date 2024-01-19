@@ -1,0 +1,26 @@
+.grid-bg{
+  background: url("80s-bg-desktop.jpeg");
+  background-size: 100%;
+  height: 90vh;
+}
+
+.tmdb{
+  padding: 8px 0;
+}
+
+.tmdb svg{
+  width:5%;
+}
+
+.tmdb p{
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-bg{
+    background: url("80s-bg-mobile.jpeg");
+    background-size: 100%;
+    height: 90vh;
+  }
+}

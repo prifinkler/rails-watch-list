@@ -1,6 +1,20 @@
 // Specific CSS for your home-page
 body {
-  background: url("https://wallpapercave.com/wp/wp10142331.jpg");
-  background-size: 15%;
   color: $white;
+  background-color: $dark-gray;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.grain{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  background: url("https://sosmula.us/cdn/shop/files/grain_fg.gif?v=1617133611");
+  opacity: 50%;
+  z-index: -1;
 }
